@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Studio Ghibli Films</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lumanosimo&family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/icon.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100%;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .main {
+            background-image: url(../img/background.jpg);
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            overflow: hidden;
+            box-shadow: 0px 90px 71px -31px rgba(202, 209, 123, 0.6) inset;
+        }
+        .navbar h2 {
+            font-family: 'Bebas Neue';
+            color: #462e32;
+            letter-spacing: 1px;
+            font-size: 4vw;
+            margin: 0 0 0 40px;
+        }
+        .icon {
+            margin: 0 40px 0 0;
+            cursor: pointer;
+            color: #462e32;
+        }
+        .icon:hover {
+            color: #796468;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: grid; 
+            grid-template-columns: 0.9fr 1fr 1.1fr; 
+            grid-template-rows: 0.8fr 3.1fr 1.7fr 0.8fr; 
+            gap: 0px 0px;
+            grid-template-areas: 
+                "navbar navbar navbar"
+                "title title poster"
+                "film film poster"
+                "footer footer footer"; 
+            }
+
+        .container * {
+            border: 1px dashed white;
+        }
+        
+        .title {
+            grid-area: title;
+            padding-left: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title h1 {
+            font-family: 'Lumanosimo';
+            font-size: 4.5vw;
+            color: #fff;
+            text-shadow: 2px 2px 4px#000;
+            margin-bottom: -17px;
+            text-wrap: nowrap;
+        }
+        .title h1 span {
+            opacity: 0;
+        }
+        .title p {
+            color: #fff;
+            font-family: arial;
+            text-shadow: 1px 1px 2px #000;
+            font-size: 2vw;
+            text-wrap: nowrap;
+        }
+        .title-button{
+            width: 20%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #87642260;
+            border: 1px solid #aa854156;
+            color: #fff;
+            font-size: 11px;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            backdrop-filter: blur(3px);
+        }
+        
+        .poster {
+            grid-area: poster;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .poster img {
+            height: 28vw;
+            box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.75);
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .poster .description{
+            color: #fff;
+            font-size: 1vw;
+            width: 50%;
+            font-family: arial;
+            margin-bottom: 15px;
+        }
+        .poster .poster-button {
+            width: 30%;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #876422;
+            border: 1px solid #aa8541;
+            color: #fff;
+            font-size: .9vw;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 22px 7px rgba(0,0,0,0.8);
+        }
+
+        .navbar {
+            grid-area: navbar;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .film {
+            grid-area: film;
+        }
+        .slider {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slider img {
+            height: 11vw; 
+            margin: 0 15px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.75);
+        }
+        
+        .footer { grid-area: footer; }
+
+        /* Smartphone */
+        @media only screen and (max-width: 600px) {
+            .navbar h2 {
+            }
+
+            .title {
+                padding-left: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .title h1 {
+                margin: 0;
+                font-size: 7vw;
+
+            }
+
+            .container {  display: grid;
+                display: grid; 
+                grid-auto-rows: 1fr; 
+                grid-template-columns: 0.9fr 1.9fr 0.5fr; 
+                grid-template-rows: 0.8fr 1.9fr 2.9fr 0.8fr; 
+                gap: 0px 0px; 
+                grid-template-areas: 
+                    "navbar navbar navbar"
+                    "title title title"
+                    "film film film"
+                    "footer footer footer"; 
+            }
+
+            .film {  display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+              gap: 0px 0px;
+              grid-auto-flow: row;
+              grid-template-areas:
+              ". . ."
+              ". . .";
+              grid-area: film;
+              grid: none;
+            }
+            .slider img {
+                height: 20vw;
+                margin: 0 10px;
+            }
+
+            .title {  display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: 1fr 1fr 1fr;
+              gap: 0px 0px;
+              grid-auto-flow: column;
+              grid-template-areas:
+              ". . ."
+              ". . ."
+              ". . .";
+              grid-area: title;
+              flex-direction: column;
+              grid: none;
+            }
+            .title-button {
+                width: 35%;
+            }
+
+            .navbar { grid-area: navbar; }
+
+            .footer { grid-area: footer; }
+            .poster {
+                display: none;
+            }
+        }
+
+        /* Tablet */
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            /* Your styles for tablets here */
+        }
+
+        /* Laptop */
+        @media screen and (min-width: 1025px) and (max-width: 1440px) {
+        }
+
+        /* Large Laptop/Desktop */
+        @media only screen and (min-width: 1441px) {
+            /* Your styles for large laptops/desktops here */
+        }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="navbar">
+                <h2>ghivibe</h2>
+                <div class="icon gg-menu-right-alt"></div>
+            </div>
+            <div class="title">
+                <h1>Watch the best <br><span>__</span> of Studio Ghibli <br> <span>_______</span> now</h1>
+                <p>Remember or find out about all fantastic<br> stories in this universe!</p>
+                <div class="title-button">
+                    WATCH NOW
+                </div>
+            </div>
+            <div class="poster">
+                <img src="../img/from up to poppy hill.jpg" alt="">
+                <div class="description" id="post-desc">
+                    The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she...
+                </div>
+                <div class="poster-button">
+                    LEARN MORE
+                </div>
+            </div>
+            <div class="film">
+                <div class="slider">
+                    <img src="/img/The_Wind_Rises.jpg" alt="">
+                    <img src="/img/my neighbor totoro.jpg" alt="">
+                    <img src="/img/ponyo.jpg" alt="">
+                    <img src="/img/Whisper_of_the_Heart.jpg" alt="">
+                    <img src="/img/when marnie was there.jpg" alt="">
+                </div>
+            </div>
+            <div class="footer"></div>
+        </div>
+        
+        <!-- <nav>
+            <h2>ghivibe</h2>
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search...">
+            </form>
+        </nav> -->
+    </section>
+    <script>
+
+    </script>
+</body>
+</html>
