@@ -185,9 +185,6 @@ body {
 
 /* Smartphone */
 @media only screen and (max-width: 600px) {
-    .navbar h2 {
-    }
-
     .title {
         padding-left: 0;
         display: flex;
