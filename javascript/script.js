@@ -1,3 +1,23 @@
+const menu = document.getElementById('menu');
+const boxSlide = document.getElementById('boxSlide')
+let isMenu = false
+if (isMenu == false) {
+    boxSlide.classList.toggle('show');
+    isMenu = true;
+} else {
+    boxSlide.classList.toggle('hidden');
+    isMenu = false;
+}
+
+
+
+
+
+
+
+
+
+
 fetch('ghibli.json')
     .then(response => response.json())
     .then(data => {
