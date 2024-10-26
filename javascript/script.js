@@ -9,14 +9,9 @@ if (isMenu == false) {
     isMenu = false;
 }
 
-
-
-
-
-
-
-
-
+document.getElementById('watchNowButton').addEventListener('click', function() {
+    window.location.href = "/vendor/film.html"
+})
 
 fetch('ghibli.json')
     .then(response => response.json())
