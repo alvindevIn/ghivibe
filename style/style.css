@@ -126,6 +126,8 @@ body {
     width: 50%;
     font-family: arial;
     margin-bottom: 15px;
+    cursor: pointer;
+    -moz-user-select: none;
 }
 .poster .poster-button {
     width: 30%;
